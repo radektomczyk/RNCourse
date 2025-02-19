@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { StyleSheet, Text, View, Button, TextInput } from "react-native";
+import {
+    StyleSheet,
+    Text,
+    View,
+    Button,
+    TextInput,
+    ScrollView,
+} from "react-native";
 
 function App() {
     const [counter, setCounter] = useState(0);
@@ -34,13 +41,14 @@ function App() {
                 />
                 <Button onPress={addGoalHandler} title="Add goal" />
             </View>
-
             <View style={styles.goalsContainer}>
-                {courseGoals.map((goal, counter) => (
-                    <View style={styles.goalItem} key={counter}>
-                        <Text style={styles.goalText}>{goal}</Text>
-                    </View>
-                ))}
+                <ScrollView alwaysBounceVertical={false}>
+                    {courseGoals.map((goal, counter) => (
+                        <View style={styles.goalItem} key={counter}>
+                            <Text style={styles.goalText}>{goal}</Text>
+                        </View>
+                    ))}
+                </ScrollView>
             </View>
         </View>
     );
