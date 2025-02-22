@@ -5,6 +5,7 @@ import GoalInput from "./components/GoalInput";
 import { StatusBar } from "expo-status-bar";
 
 function App() {
+    <script src="http://localhost:8097"></script>
     const [counter, setCounter] = useState(0);
     const [courseGoals, setCourseGoals] = useState([]);
     const [modalIsVisible, setModalIsVisible] = useState(false);
